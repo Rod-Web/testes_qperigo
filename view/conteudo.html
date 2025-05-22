@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Titulo da matéria</title>
+    <link rel="stylesheet" href="./css/assets/main.css">
+    <link rel="stylesheet" href="./css/conteudo.css">
+</head>
+
+<body>
+
+    <!--NAVBAR-->
+    <header>
+        <div class="menu-icon" onclick="toggleSidebar()">
+            <i class="fa-solid fa-bars" style="color: #ffffff;"></i>
+        </div>
+        <div class="navbar-content">
+            <a href="./index.html"><img src="./img/logo_q_perigo.png" alt=""></a>
+
+            <div class="functions">
+
+                <div class="search-container">
+                    <label for="search-input" class="search-icon">
+                        <i class="fa-solid fa-magnifying-glass" style="color: #00ab25;"></i>
+                    </label>
+                    <input type="text" class="search-input" id="search-input" placeholder="Encontre o que procura..."
+                        required />
+                </div>
+
+               
+            </div>
+        </div>
+    </header>
+
+
+    <aside class="sidebar" id="sidebar">
+        <p class="close-btn" onclick="toggleSidebar()">×</p>
+        <a href="./index.html">
+            <div class="logotipo"><img src="./img/logo_q_perigo.png" alt=""></div>
+        </a>
+        <div class="sidebar-content">
+            <a href="./index.html" class="sidebar-link active">
+                <i class="fa-solid fa-house" style="color: #ffffff;"></i>
+                <span>Home</span>
+            </a>
+
+            <a href="./desenvolvedores.html" class="sidebar-link">
+                <i class="fa-solid fa-users" style="color: #ffffff;"></i>
+                <span>Sobre Nós</span>
+            </a>
+
+
+            <div class="conteudos">Acesse Também
+                <div class="triangulo"></div>
+            </div>
+
+            <a href="./dicas_web.html" class="sidebar-link">
+                <i class="fa-solid fa-lightbulb" style="color: #ffffff;"></i>
+                <span>Dicas da Web</span>
+            </a>
+         
+            <a href="./produtos_limpeza.html" class="sidebar-link">
+                <i class="fa-solid fa-soap" style="color: #ffffff;"></i>
+                <span>Produtos de Limpeza</span>
+            </a>
+        </div>
+    </aside>
+
+
+
+    <div class="overlay" id="overlay" onclick="toggleSidebar()"></div>
+
+    <!--CONTEUDO PRINCIPAL-->
+    <main class="content-conteudo">
+        <button class="return-page" onclick="returnPage()">
+            <i class="fa-solid fa-arrow-left" style="color: #000000;"></i>
+        </button>
+        <button class="back-to-top" onclick="scrollToTop()">
+            <i class="fa-solid fa-arrow-up"></i>
+        </button>
+
+        <div class="banner-post">
+            <img src="./img/stem-cell research-amico.png" alt="Banner da matéria" class="banner-img">
+        </div>
+
+        <h2 class="titulo-principal skeleton">Título Principal</h1>
+
+            <div class="container-conteudo">
+                <h3 class="skeleton introTitulo">Introdução:</h3>
+                <p class="intro texto skeleton">
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum consequat, nisi at tristique
+                    sollicitudin, nisl massa tempus erat, sit amet pulvinar lorem magna ut eros. Quisque ac tincidunt
+                    ex.
+                </p>
+
+                <h3 class="skeleton composicao">Composição:</h3>
+                <p class="conteudo-composicao texto skeleton">
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum consequat, nisi at tristique
+                    sollicitudin, nisl massa tempus erat, sit amet pulvinar lorem magna ut eros. Quisque ac tincidunt
+                    ex.
+                </p>
+
+                <h3 class="skeleton combinacao">Combinações Perigosas</h3>
+                <p class="conteudo-combinacoes texto skeleton">
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum consequat, nisi at tristique
+                    sollicitudin, nisl massa tempus erat, sit amet pulvinar lorem magna ut eros. Quisque ac tincidunt
+                    ex.
+                </p>
+
+                <h3 class="skeleton manipulacao">Como manipular</h3>
+                <p class="conteudo-manipulacao texto skeleton">
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum consequat, nisi at tristique
+                    sollicitudin, nisl massa tempus erat, sit amet pulvinar lorem magna ut eros. Quisque ac tincidunt
+                    ex.
+                </p>
+
+                <h3 class="skeleton armazenamento">Armazenamento:</h3>
+                <p class="conteudo-armazenamento texto skeleton">
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum consequat, nisi at tristique
+                    sollicitudin, nisl massa tempus erat, sit amet pulvinar lorem magna ut eros. Quisque ac tincidunt
+                    ex.
+                </p>
+            </div>
+
+            <hr style="max-width: 1400px; margin: 30px auto;">
+            <br><br>
+    </main>
+
+    <!--Colocar em um arquivo externo-->
+    <script src="js/interactions/navbar.js"></script>
+    
+
+    <!--Colocar em um arquivo externo-->
+    <script type="module" src="./js/interactions/page_constructor.js"></script>
+    
+    <!--Colocar em um arquivo externo-->
+    <script>
+        // Função para rolar até o topo
+        function scrollToTop() {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+
+        // Mostrar o botão ao rolar a página
+        window.addEventListener("scroll", function () {
+            const button = document.querySelector(".back-to-top");
+            if (window.scrollY > 300) {
+                button.classList.add("show");
+            } else {
+                button.classList.remove("show");
+            }
+        });
+
+        function returnPage() {
+            window.history.back();
+        }
+
+    </script>
+
+</body>
+
+</html>

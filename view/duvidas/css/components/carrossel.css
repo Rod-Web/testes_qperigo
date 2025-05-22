@@ -1,0 +1,204 @@
+.container-carrossel {
+  position: relative;
+  max-width: 1400px;
+  background-color: rgb(0, 0, 0);
+  margin: auto;
+}
+
+.container-carrossel .slide-container .slide {
+  max-width: 1700px;
+  min-height: 550px;
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  padding: 20px 9%;
+  padding-bottom: 70px;
+  position: relative;
+  overflow: hidden;
+}
+
+.container-carrossel .slide-container .slide::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-position: center;
+  z-index: 1;
+  opacity: 70%;
+}
+
+.container-carrossel .slide-container:nth-child(1) .slide::before {
+  background-image: url(../../img/banner-quimicas-jogo.jpg);
+  opacity: 100%;
+}
+
+.container-carrossel .slide-container:nth-child(2) .slide::before {
+  background-image: url(../../img/banner-quimicas.jpg);
+  opacity: 100%;
+}
+
+.container-carrossel .slide-container .slide .content-slide {
+  flex: 1 1 150px;
+  animation: slideContent 0.4s linear 0.4s backwards;
+  position: relative;
+  z-index: 2;
+}
+
+@keyframes slideContent {
+  0% {
+    opacity: 0;
+    transform: translateX(-50px);
+  }
+}
+
+.container-carrossel .slide-container .slide .content-slide h3 {
+  font-size: 48px;
+  color: white;
+  margin-bottom: 10px;
+  width: 50%;
+}
+
+.container-carrossel .slide-container .slide .content-slide p {
+  font-size: 18px;
+  color: white;
+  width: 40%;
+  height: 10%;
+  margin-bottom: 20px;
+}
+
+.container-carrossel .slide-container:nth-child(2) .slide .content-slide h3 {
+  color: #daff01;
+}
+
+.container-carrossel .slide-container:nth-child(1) .slide .content-slide h3 {
+  color: #003334;
+}
+
+.container-carrossel .slide-container:nth-child(1) .slide .content-slide p {
+  color: #019934;
+}
+
+.container-carrossel .slide-container .slide .content-slide .btn-slide {
+  margin-top: 10px;
+  display: inline-block;
+  background-color: rgb(0, 202, 178);
+  color: rgb(255, 255, 255);
+  font-size: 14px;
+  padding: 9px 40px;
+  border-radius: 5px;
+  border: 2px solid rgb(0, 169, 150);
+  text-decoration: none;
+}
+
+.container-carrossel .slide-container .slide .content-slide .btn-slide:hover {
+  background-color: rgb(0, 230, 203);
+  border: 2px solid rgb(0, 211, 187);
+  color: rgb(0, 0, 0);
+}
+
+.container-carrossel .slide-container {
+  display: none;
+}
+
+.container-carrossel .slide-container.active {
+  display: block;
+  position: relative;
+}
+
+.container-carrossel .slide-container.active::before {
+  content: "";
+  position: absolute;
+  opacity: 0.5;
+}
+
+.container-carrossel #prev,
+.container-carrossel #next {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  color: rgb(0, 168, 39);
+  background-color: rgb(112, 255, 117);
+  height: 50px;
+  width: 50px;
+  line-height: 50px;
+  font-size: 25px;
+  text-align: center;
+  cursor: pointer;
+  font-weight: bolder;
+  border-radius: 50%;
+  z-index: 3;
+  text-align: center;
+}
+
+.container-carrossel #prev:hover,
+.container-carrossel #next:hover {
+  background-color: cadetblue;
+}
+
+.container-carrossel #prev {
+  left: 20px;
+}
+
+.container-carrossel #next {
+  right: 20px;
+}
+
+@media (max-width: 900px) {
+  .container-carrossel .slide-container .slide {
+    min-height: 350px;
+  }
+  .content-slide {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .container-carrossel .slide-container:nth-child(1) .slide::before {
+    background-image: url(../../img/banner-quimicas-jogo-mobile.jpg);
+    opacity: 70%;
+  }
+
+  .container-carrossel .slide-container .slide .content-slide h3 {
+    font-size: 34px;
+    text-align: center;
+    width: 80%;
+  }
+
+  .container-carrossel .slide-container .slide .content-slide p {
+    font-size: 13px;
+    text-align: center;
+    width: 100%;
+    padding: 0 40px;
+  }
+
+  .container-carrossel .slide-container:nth-child(1) .slide .content-slide h3 {
+    color: white;
+  }
+
+  .container-carrossel .slide-container:nth-child(1) .slide .content-slide p {
+    color: white;
+  }
+
+  .container-carrossel .slide-container .slide .content-slide .btn-slide {
+    font-size: 10px;
+  }
+
+  .container-carrossel #prev,
+  .container-carrossel #next {
+    height: 35px;
+    width: 35px;
+    line-height: 35px;
+    font-size: 25px;
+  }
+  .container-carrossel #prev {
+    left: 10px;
+  }
+
+  .container-carrossel #next {
+    right: 10px;
+  }
+}

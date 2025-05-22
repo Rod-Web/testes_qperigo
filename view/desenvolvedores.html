@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Desenvolvedores</title>
+    <link rel="stylesheet" href="./css/assets/main.css">
+    <link rel="stylesheet" href="./css/desenvolvedores.css">
+
+</head>
+
+<body>
+    <!--NAVBAR-->
+    <header>
+        <div class="menu-icon" onclick="toggleSidebar()">
+            <i class="fa-solid fa-bars" style="color: #ffffff;"></i>
+        </div>
+        <div class="navbar-content">
+            <a href="./index.html"><img src="./img/logo_q_perigo.png" alt=""></a>
+
+            <div class="functions">
+
+                <div class="search-container">
+                    <label for="search-input" class="search-icon">
+                        <i class="fa-solid fa-magnifying-glass" style="color: #00ab25;"></i>
+                    </label>
+                    <input type="text" class="search-input" id="search-input" placeholder="Encontre o que procura..."
+                        required />
+                </div>
+
+                <!--
+                <a href="./login.html">
+                    <div class="profile">
+                        <i class="fa-solid fa-user" style="color: #00ab25;"></i>
+                    </div>
+                </a>
+                -->
+            </div>
+        </div>
+    </header>
+    <aside class="sidebar" id="sidebar">
+        <p class="close-btn" onclick="toggleSidebar()">×</p>
+        <a href="./index.html">
+            <div class="logotipo"><img src="./img/logo_q_perigo.png" alt=""></div>
+        </a>
+        <div class="sidebar-content">
+            <a href="./index.html" class="sidebar-link active">
+                <i class="fa-solid fa-house" style="color: #ffffff;"></i>
+                <span>Home</span>
+            </a>
+
+            <a href="./desenvolvedores.html" class="sidebar-link">
+                <i class="fa-solid fa-users" style="color: #ffffff;"></i>
+                <span>Sobre Nós</span>
+            </a>
+            <!--
+            <a href="#" class="sidebar-link">
+                <i class="fa-solid fa-gamepad" style="color: #ffffff;"></i>
+                <span>Jogo: Clean House</span>
+            </a>
+            <a href="./contribuidor.html" class="sidebar-link">
+                <i class="fa-solid fa-handshake-angle" style="color: #ffffff;"></i>
+                <span>Contribua</span>
+            </a>
+            -->
+
+            <div class="conteudos">Acesse Também
+                <div class="triangulo"></div>
+            </div>
+
+            <a href="./dicas_web.html" class="sidebar-link">
+                <i class="fa-solid fa-lightbulb" style="color: #ffffff;"></i>
+                <span>Dicas da Web</span>
+            </a>
+            <!--
+            <a href="./desvendando_mitos.html" class="sidebar-link">
+                <i class="fa-solid fa-magnifying-glass-plus" style="color: #ffffff;"></i>
+                <span>Desvendando Mitos</span>
+            </a>
+            -->
+            <a href="./produtos_limpeza.html" class="sidebar-link">
+                <i class="fa-solid fa-soap" style="color: #ffffff;"></i>
+                <span>Produtos de Limpeza</span>
+            </a>
+        </div>
+    </aside>
+    <div class="overlay" id="overlay" onclick="toggleSidebar()"></div>
+
+    <main>
+        <button class="back-to-top" onclick="scrollToTop()">
+            <i class="fa-solid fa-arrow-up"></i>
+        </button>
+        <div class="container-about-us">
+            <div class="about-img">
+                <img src="https://www.quimica.com.br/wp-content/uploads/2022/03/pesquisa-quimica.jpg" alt="">
+            </div>
+
+            <div class="about-data">
+                <h1>About Us</h1>
+                <p>Somos estudantes da ETEC Cidade Tiradentes e estamos explorando o universo das misturas químicas
+                    perigosas em nosso projeto científico. Com uma abordagem educativa e focada na conscientização,
+                    nosso objetivo é mostrar a importância de entender as substâncias químicas e como suas combinações
+                    podem impactar o nosso dia a dia, seja em casa, no ambiente de trabalho ou na natureza. Queremos
+                    desmistificar o conceito de "químico perigoso" e conscientizar o público sobre os riscos e a
+                    segurança necessária ao lidar com esses elementos.</p>
+                <div class="base-social-media">
+                    <a href="https://www.facebook.com/etecctoficial/" target="_blank"><i
+                            class="fa-brands fa-facebook"></i></a>
+                    <a href="https://www.instagram.com/etecct_oficial/" target="_blank"><i
+                            class="fa-brands fa-instagram"></i></a>
+                    <a href="https://www.youtube.com/channel/UC7a68RRe2agVgXoWCn-E4-w" target="_blank"><i
+                            class="fa-brands fa-youtube"></i></a>
+                </div>
+            </div>
+        </div>
+
+        <hr style="margin: 40px 20px;">
+
+        <div class="about-project">
+            <h1 class="title-projet">Sobre o Projeto QPERIGO</h1>
+            <p class="description-project">O projeto QPERIGO tem como foco a análise e conscientização sobre os riscos
+                das misturas químicas perigosas. Através de uma abordagem educativa, buscamos informar sobre os perigos
+                que podem surgir ao combinar substâncias de maneira inadequada, abordando como essas interações podem
+                afetar a saúde e a segurança no ambiente doméstico. Nosso objetivo é ajudar as pessoas a entenderem os
+                riscos e aprenderem como prevenir acidentes em casa.</p>
+
+            <div class="base-objectives">
+                <div class="objective">
+                    <div class="title-objetive">
+                        <h1>01</h1>
+                        <h2>Riscos das Misturas Químicas</h2>
+                    </div>
+
+                    <p>O projeto visa informar sobre os perigos de misturar substâncias químicas comuns em casa, como
+                        produtos de limpeza, que podem resultar em reações inesperadas e prejudiciais à saúde.
+
+                    </p>
+                </div>
+
+                <div class="objective">
+                    <div class="title-objetive">
+                        <h1>02</h1>
+                        <h2>Segurança</h2>
+                    </div>
+
+                    <p>Nosso objetivo é ensinar como utilizar produtos químicos de maneira segura, garantindo que as
+                        pessoas saibam como manuseá-los corretamente para evitar acidentes.</p>
+                </div>
+
+                <div class="objective">
+                    <div class="title-objetive">
+                        <h1>03</h1>
+                        <h2>Prevenção</h2>
+                    </div>
+
+                    <p>Queremos conscientizar sobre a importância de adotar medidas preventivas em casa, como o
+                        armazenamento correto e a leitura atenta dos rótulos, para evitar acidentes com substâncias
+                        químicas.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="container-team">
+            <h1>EQUIPE RESPONSÁVEL</h1>
+
+            <br>
+
+            <div class="container-cards">
+                <div class="card">
+                    <img src="./img/fernando_foto.jpg" alt="Fernando Ramirez - Front-end" class="img-member">
+                    <h4>Desenvolvedor Front-end</h4>
+                    <p>Fernando Ramirez Gutierrez</p>
+                </div>
+                <div class="card">
+                    <img src="./img/team/gabriel.jpg" alt="Gabriel Feltrin - Front-end" class="img-member">
+                    <h4>Desenvolvedor Front-end</h4>
+                    <p>Gabriel Carvalho Feltrin</p>
+                </div>
+                <div class="card">
+                    <img src="./img/team/luiz.jpg" alt="Luiz Fernando - Back-end" class="img-member">
+                    <h4>Desenvolvedor Back-end</h4>
+                    <p>Luiz Fernando dos Santos Vieira</p>
+                </div>
+                <div class="card">
+                    <img src="./img/team/geovanne.jpg" alt="Geovane de Souza - Back-end" class="img-member">
+                    <h4>Desenvolvedor Back-end</h4>
+                    <p>Geovanne de souza silva</p>
+                </div>
+            </div>
+        </div>
+
+        <br><br>
+
+        <p class="project-description">Projeto Criado por alunos do 3º Informática para Internet do ano de 2024
+            sob a orientação do professor Everson Bacelli.</p>
+        <p class="institution">ETEC CIDADE TIRADENTES - 2024 - SP</p>
+    </main>
+
+    <script src="./js/interactions/navbar.js"></script>
+    <script>
+        // Função para rolar até o topo
+        function scrollToTop() {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+
+        // Mostrar o botão ao rolar a página
+        window.addEventListener("scroll", function () {
+            const button = document.querySelector(".back-to-top");
+            if (window.scrollY > 300) {
+                button.classList.add("show");
+            } else {
+                button.classList.remove("show");
+            }
+        });
+
+    </script>
+
+</body>
+
+</html>

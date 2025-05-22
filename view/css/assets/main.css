@@ -1,0 +1,79 @@
+@import url(./reset.css);
+@import url(./navbar.css);
+@import url(./rodape.css);
+@import url(../components/banner.css);
+
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Work+Sans:ital,wght@0,100..900;1,100..900&display=swap");
+@import url(https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css);
+
+body {
+  font-family: "Open Sans", sans-serif;
+  margin: 0;
+  padding: 0;
+  position: relative;
+  background: linear-gradient(to bottom, #c8f3cc, #3ecf56);
+}
+
+main {
+  padding: 40px;
+  margin: 76px auto 0 auto;
+  max-width: 1500px;
+  min-height: 100vh;
+  background-color: white;
+  box-sizing: border-box;
+  z-index: 1;
+}
+
+.back-to-top {
+  position: fixed;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  bottom: 40px;
+  right: 40px;
+  height: 60px;
+  padding: 20px;
+  font-size: 19px;
+  border-radius: 50%;
+  color: #0c9e1a;
+  font-weight: bold;
+  background-color: white;
+  border: 3px solid #26c338;
+  cursor: pointer;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  transition: background-color 0.3s, opacity 0.3s;
+  opacity: 0;
+  visibility: hidden;
+  z-index: 4;
+}
+
+.back-to-top:hover {
+  background-color: #00a515;
+  color: white;
+}
+
+.back-to-top.show {
+  opacity: 1;
+  visibility: visible;
+}
+
+.return-page {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+}
+
+.return-page i {
+  font-size: 24px;
+}
+
+@media (max-width: 900px) {
+  main {
+    padding: 10px;
+  }
+
+  .return-page i {
+    font-size: 20px;
+    margin: 18px 0;
+  }
+}
