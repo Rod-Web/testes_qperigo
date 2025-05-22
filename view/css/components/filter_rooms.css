@@ -1,130 +1,106 @@
-.filter-rooms {
-  height: auto;
-  max-width: 1400px;
-  display: flex;
-  justify-content: space-between;
-  gap: 10px;
-  overflow-x: auto;
+
+
+.filter-options {
+    display: none; 
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+    padding: 20px 0;
+    max-width: 1400px;
+    margin: 20px auto;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    background-color: whitesmoke;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
-.filter-rooms .room {
-  position: relative;
-  max-width: 220px;
-  width: 200px;
-  padding: 15px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  font-size: 15px;
-  border-radius: 50px;
-  border: solid 3px rgb(194, 194, 194);
-  box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
-  transition: border-color 0.5s, background-color 0.2s;
+.filter-options.show {
+    display: flex;
 }
 
-.room img {
-  position: absolute;
-  border-radius: 50px;
-  height: 100%;
-  width: 100%;
-  opacity: 90%;
-  padding: 3px;
-  filter: brightness(0.7);
-  object-fit: cover;
+.filter-options .room {
+    background-image: linear-gradient(90deg, #537D5D, #73946B, #537D5D);
+    position: relative;
+    max-width: 220px;
+    width: 200px;
+    padding: 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 15px;
+    border-radius: 50px;
+    border: solid 3px rgb(194, 194, 194);
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+    transition: border-color 0.1s, background-color 0.2s;
 }
 
-.room h3 {
-  z-index: 2;
-  color: white;
-  transition: color 0.5s;
+.filter-options .room img {
+    margin-right: 10px;
 }
 
-.filter-rooms .room.active {
-  border-color: #00cd18;
+.filter-options .room h3 {
+    z-index: 2;
+    color: white;
+    transition: color 0.1s;
 }
 
-.filter-rooms .room.active h3 {
-  color: #82ff91;
+.filter-options .room.active {
+    border-color: #D2D0A0;
 }
 
-.filter-rooms .room:hover {
-  border-color: #00cd18;
-  cursor: pointer;
+.filter-options .room.active h3 {
+    color: #D2D0A0;
 }
 
-.filter-rooms .room:hover h3 {
-  color: #82ff91;
+.filter-options .room:hover {
+    border-color: #CAE8BD;
+    cursor: pointer;
 }
 
-.search-container {
-  position: relative;
-  display: flex;
-  width: auto;
-}
-
-.search-icon {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  position: absolute;
-  width: 40px;
-  height: 40px;
-  border-radius: 50%;
-  cursor: pointer;
-  transition: transform 0.3s;
-}
-
-.search-input {
-  width: 300px;
-  height: 40px;
-  border-radius: 20px;
-  border: none;
-  outline: none;
-  padding-left: 40px;
-  transition: width 0.7s ease;
-  box-shadow: 2px 2px 5px #777;
+.filter-options .room:hover h3 {
+    color: #CAE8BD;
 }
 
 @media (max-width: 1300px) {
-  .filter-rooms .room {
-    min-width: 100px;
-    font-size: 13px;
-  }
+    .filter-options .room {
+        min-width: 100px;
+        font-size: 13px;
+    }
 
-  .search-input {
-    width: 200px;
-  }
+    .search-input {
+        width: 200px;
+    }
 }
 
 @media (max-width: 1000px) {
-  .filter-rooms {
-    overflow-x: auto;
-    max-width: 100%;
-    padding: 10px 0;
-  }
+    .filter-options {
+        overflow-x: auto;
+        max-width: 100%;
+        padding: 10px 0;
+    }
 
-  .filter-rooms::-webkit-scrollbar {
-    height: 8px;
-  }
+    .filter-options::-webkit-scrollbar {
+        height: 8px;
+    }
 
-  .filter-rooms::-webkit-scrollbar-track {
-    background: #e0e0e0;
-    border-radius: 10px;
-  }
+    .filter-options::-webkit-scrollbar-track {
+        background: #e0e0e0;
+        border-radius: 10px;
+    }
 
-  .filter-rooms::-webkit-scrollbar-thumb {
-    background-color: #00cd18;
-    border-radius: 10px;
-    margin-top: 6px;
-  }
+    .filter-options::-webkit-scrollbar-thumb {
+        background-color: #00cd18;
+        border-radius: 10px;
+        margin-top: 6px;
+    }
 
-  .filter-rooms .room {
-    min-width: 140px;
-    padding: 10px;
-    font-size: 13px;
-  }
+    .filter-options .room { /* Ajuste para o novo seletor */
+        min-width: 140px;
+        padding: 10px;
+        font-size: 13px;
+    }
 
-  .search-input {
-    width: 260px;
-  }
+    .search-input {
+        width: 260px;
+    }
 }

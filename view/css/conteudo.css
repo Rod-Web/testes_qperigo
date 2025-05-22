@@ -1,5 +1,38 @@
 @import url(./components/filter_rooms.css);
 
+/*      Navbar design         */
+
+.search-container {
+    position: relative;
+    display: flex;
+    width: auto;
+}
+
+.search-icon {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: transform 0.3s;
+}
+
+.search-input {
+    width: 300px;
+    height: 40px;
+    border-radius: 20px;
+    border: none;
+    outline: none;
+    padding-left: 40px;
+    transition: width 0.7s ease;
+    box-shadow: 2px 2px 5px #777;
+}
+
+
+
 .banner-post {
   max-width: 1000px;
   height: 500px;
@@ -100,26 +133,6 @@
   transform: scale(1.01);
 }
 
-/* Skeleton Loader */
-.skeleton {
-  background-color: #e0e0e0;
-  position: relative;
-  overflow: hidden;
-  color: transparent;
-  border-radius: 4px;
-}
-
-/* Animação de brilho */
-.skeleton::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: -150%;
-  width: 200%;
-  height: 100%;
-  background: linear-gradient(90deg, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0.3) 50%, rgba(255, 255, 255, 0) 100%);
-  animation: shimmer 1.5s infinite;
-}
 
 
 .titulo-principal.skeleton{
@@ -179,4 +192,33 @@ p.skeleton {
   .search-input {
     width: 160px;
   }
+
+  .search-container {
+    position: relative;
+    display: flex;
+    width: auto;
+}
+
+.search-icon {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: transform 0.3s;
+}
+
+.search-input {
+    width: 300px;
+    height: 40px;
+    border-radius: 20px;
+    border: none;
+    outline: none;
+    padding-left: 40px;
+    transition: width 0.7s ease;
+    box-shadow: 2px 2px 5px #777;
+}
 }

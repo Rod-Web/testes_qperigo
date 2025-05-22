@@ -2,7 +2,7 @@ header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background: linear-gradient(#0cb100, #42cf00);
+  background: linear-gradient(#537D5D, #73946B);
   padding: 10px 100px;
   position: fixed;
   width: 100%;
@@ -63,7 +63,7 @@ header {
   left: -310px;
   width: 310px;
   height: 100%;
-  background: linear-gradient(#0dc000, #42cf00);
+  background-image: linear-gradient(90deg, #537D5D, #73946B, #537D5D);
   transition: left 0.3s ease;
   z-index: 1000;
   padding-top: 60px;
@@ -98,7 +98,7 @@ header {
 }
 
 .sidebar-link:hover {
-  background-color: #63d767;
+  background-color: #73946B;
   transform: translateX(10px);
 }
 
@@ -109,13 +109,13 @@ header {
 }
 
 .sidebar-link.active {
-  background-color: #63d767;
+  background-color: #73946B;
   color: white;
 }
 
 .conteudos {
   width: 100%;
-  background-color: #00ab06;
+  background-color: #537D5D;
   color: white;
   padding: 13px;
   margin-top: 30px;
@@ -129,7 +129,7 @@ header {
   height: 0;
   border-left: 28px solid transparent;
   border-right: 28px solid transparent;
-  border-top: 28px solid #00ab06;
+  border-top: 28px solid #537D5D;
   top: 100%;
   left: 70%;
 }
