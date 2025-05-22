@@ -145,7 +145,7 @@ function renderizarNoticiasEmDestaque() {
 // ======= Função Helper: Card com Listener de Clique =======
 function criarCardComListener(card, id) {
   card.addEventListener("click", () => {
-    window.location.href = `https://front-qperigo.vercel.app/view/conteudo.html?id=${id}`;
+    window.location.href = `/view/conteudo.html?id=${id}`;
   });
   return card;
 }

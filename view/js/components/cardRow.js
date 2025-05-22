@@ -76,7 +76,7 @@ export function cardRow(data) {
     : data.introducao;
 
   const btnView = document.createElement('a');
-  btnView.href = `./conteudo.html?id=${data.id_postagem}`;  // Alterado para id_postagem
+  btnView.href = `/view/conteudo.html?id=${data.id_postagem}`;  // Alterado para id_postagem
   btnView.classList.add('btn-view');
   btnView.textContent = 'Saiba mais';
 
