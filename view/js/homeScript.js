@@ -1,5 +1,8 @@
-import { cardColumn } from "./components/cardColumn.js";
-import { cardRow } from "./components/cardRow.js";
+import { btnEsperto } from "./interactions/global/rolagem-topo.js";
+import { abrirBarraLateral } from "./interactions/global/barra_lateral.js";
+
+import { cardColumn } from "./components/format-cards-home/cardColumn.js";
+import { cardRow } from "./components/format-cards-home/cardRow.js";
 
 const url = "https://backqperigo-production.up.railway.app/postagens";
 let postagens = [];
@@ -10,7 +13,10 @@ document.addEventListener("DOMContentLoaded", async ()=> {
     await carregarDados();
     configuracaoFiltro();
     atualizarPagina();
-    renderizarCardsBase();
+    renderizarSecaoDestaque();
+    btnEsperto();
+    abrirBarraLateral();
+
 
 });
 
@@ -75,15 +81,15 @@ function aplicarFiltro() {
 
 function atualizarPagina() {
     aplicarFiltro();
-    renderizarNoticiasEmDestaque();
-        configurarToggleFiltro();
+    renderizarSecaoDestaque();
+    configurarToggleFiltro();
 
 }
 
 //====== Visibilidade do filtro =======
 function configurarToggleFiltro() {
     const filtroIcon = document.getElementById("filtro-icon")
-    const filterOptionsDiv = document.getElementById("filter-options")
+    const filterOptionsDiv = document.getElementById("opcoes-filtro")
 
     filtroIcon.addEventListener("click", function mostrarToggle(){
         filterOptionsDiv.classList.toggle("show")
@@ -91,8 +97,8 @@ function configurarToggleFiltro() {
 }
 
 // ======= Renderiza Notícias em Destaque (Row com Paginação) =======
-function renderizarNoticiasEmDestaque() {
-  const container = document.querySelector(".cards-base-home-row");
+function renderizarSecaoDestaque() {
+  const container = document.querySelector(".cards-home-row");
   const prevBtn = document.getElementById("prev-page");
   const nextBtn = document.getElementById("next-page");
   const pageNumber = document.querySelector(".number");

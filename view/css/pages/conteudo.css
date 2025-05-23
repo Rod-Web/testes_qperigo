@@ -212,45 +212,23 @@ body {
   opacity: 1;
 }
 
-/* Botões de Navegação */
-.back-to-top {
-  position: fixed;
-  bottom: 2rem;
-  right: 2rem;
-  width: 3.5rem;
-  height: 3.5rem;
-  background: var(--primary-color);
-  color: var(--white);
+.return-page {
+  background-color: transparent;
   border: none;
-  border-radius: var(--radius-full);
   cursor: pointer;
-  display: grid;
-  place-items: center;
-  font-size: 1.25rem;
-  opacity: 0;
-  visibility: hidden;
-  transition: all var(--transition-normal) cubic-bezier(0.25, 0.8, 0.25, 1);
-  box-shadow: 
-    0 4px 6px rgba(0, 138, 30, 0.1),
-    0 1px 3px rgba(0, 138, 30, 0.08);
-  z-index: 100;
-  transform: translateY(10px);
-  border: 2px solid transparent;
 }
 
-.back-to-top.show {
-  opacity: 1;
-  visibility: visible;
-  transform: translateY(0);
+.return-page i {
+  font-size: 24px;
 }
 
-.back-to-top:hover {
-  background: var(--primary-light);
-  transform: translateY(-3px);
-  box-shadow: 
-    0 7px 14px rgba(0, 138, 30, 0.2),
-    0 3px 6px rgba(0, 138, 30, 0.1);
-  animation: pulse 1.5s infinite;
+@media (max-width: 900px) {
+
+    .return-page i {
+    font-size: 20px;
+    margin: 18px 0;
+  }
+  
 }
 
 .return-page {
@@ -360,12 +338,6 @@ body {
     display: none;
   }
   
-  .back-to-top {
-    width: 3rem;
-    height: 3rem;
-    bottom: 1.5rem;
-    right: 1.5rem;
-  }
   
   .texto {
     max-height: 60px;
@@ -500,12 +472,6 @@ body {
   box-shadow: 0 8px 15px rgba(0, 138, 30, 0.3);
 }
 
-/* Efeito hover para o botão de voltar ao topo */
-.back-to-top:hover {
-  transform: translateY(-5px) scale(1.05);
-  animation: pulse 1.5s infinite;
-}
-
 /* Efeito hover para o botão de retornar à página */
 .return-page {
   transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
@@ -521,53 +487,6 @@ body {
 
 .return-page:hover i {
   color: white;
-}
-
-/* Efeito hover para os itens do sidebar */
-.sidebar-link {
-  position: relative;
-  transition: all 0.3s ease;
-  overflow: hidden;
-}
-
-.sidebar-link::before {
-  content: '';
-  position: absolute;
-  left: -100%;
-  top: 0;
-  width: 100%;
-  height: 100%;
-  background: linear-gradient(90deg, transparent, rgba(0, 200, 53, 0.1), transparent);
-  transition: all 0.6s ease;
-}
-
-.sidebar-link:hover {
-  transform: translateX(5px);
-  background-color: rgba(0, 138, 30, 0.05);
-}
-
-.sidebar-link:hover::before {
-  left: 100%;
-}
-
-/* Efeito hover para o ícone de menu */
-.menu-icon {
-  transition: transform 0.3s ease;
-}
-
-.menu-icon:hover {
-  transform: scale(1.1);
-}
-
-/* Efeito hover para a barra de pesquisa */
-.search-container:hover .search-icon {
-  transform: scale(1.1);
-}
-
-.search-input:hover,
-.search-input:focus {
-  border-color: var(--primary-color);
-  box-shadow: 0 0 0 2px rgba(0, 138, 30, 0.2);
 }
 
 /* Animação de pulse para elementos interativos */

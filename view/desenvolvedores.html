@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Desenvolvedores</title>
-    <link rel="stylesheet" href="./css/assets/main.css">
+    <link rel="stylesheet" href="/view/css/component/components/header.css">
     <link rel="stylesheet" href="./css/desenvolvedores.css">
 
 </head>
@@ -13,36 +13,33 @@
 <body>
     <!--NAVBAR-->
     <header>
-        <div class="menu-icon" onclick="toggleSidebar()">
+
+        <div class="div-menu" onclick="toggleSidebar()">
             <i class="fa-solid fa-bars" style="color: #ffffff;"></i>
         </div>
-        <div class="navbar-content">
-            <a href="./index.html"><img src="./img/logo_q_perigo.png" alt=""></a>
 
-            <div class="functions">
-
-                <div class="search-container">
-                    <label for="search-input" class="search-icon">
-                        <i class="fa-solid fa-magnifying-glass" style="color: #00ab25;"></i>
-                    </label>
-                    <input type="text" class="search-input" id="search-input" placeholder="Encontre o que procura..."
-                        required />
-                </div>
-
-                <!--
-                <a href="./login.html">
-                    <div class="profile">
-                        <i class="fa-solid fa-user" style="color: #00ab25;"></i>
-                    </div>
-                </a>
-                -->
-            </div>
+        <div class="container-navbar">
+            <a href="/view/index.html">
+                <img 
+                    src="/view/img/conteudos/logo-q-perigo.png" 
+                    alt="Logo branca escrito Qperigo como representação da página"
+                >
+            </a>
         </div>
+
+        <div class="container-busca">
+            <label for="busca-input" class="icone-busca">
+                <i class="fa-solid fa-magnifying-glass" style="color: #537D5D;"></i>
+            </label>
+            <input type="text" class="busca-input" id="busca-input" placeholder="Encontre o que procura..." required/>
+        </div>
+
     </header>
+    
     <aside class="sidebar" id="sidebar">
         <p class="close-btn" onclick="toggleSidebar()">×</p>
         <a href="./index.html">
-            <div class="logotipo"><img src="./img/logo_q_perigo.png" alt=""></div>
+            <div class="logotipo"><img src="./img/logo-q-perigo.png" alt=""></div>
         </a>
         <div class="sidebar-content">
             <a href="./index.html" class="sidebar-link active">
@@ -69,17 +66,17 @@
                 <div class="triangulo"></div>
             </div>
 
-            <a href="./dicas_web.html" class="sidebar-link">
+            <a href="./dicas-web.html" class="sidebar-link">
                 <i class="fa-solid fa-lightbulb" style="color: #ffffff;"></i>
                 <span>Dicas da Web</span>
             </a>
             <!--
-            <a href="./desvendando_mitos.html" class="sidebar-link">
+            <a href="./desvendando-mitos.html" class="sidebar-link">
                 <i class="fa-solid fa-magnifying-glass-plus" style="color: #ffffff;"></i>
                 <span>Desvendando Mitos</span>
             </a>
             -->
-            <a href="./produtos_limpeza.html" class="sidebar-link">
+            <a href="./produtos-limpeza.html" class="sidebar-link">
                 <i class="fa-solid fa-soap" style="color: #ffffff;"></i>
                 <span>Produtos de Limpeza</span>
             </a>
@@ -105,11 +102,11 @@
                     desmistificar o conceito de "químico perigoso" e conscientizar o público sobre os riscos e a
                     segurança necessária ao lidar com esses elementos.</p>
                 <div class="base-social-media">
-                    <a href="https://www.facebook.com/etecctoficial/" target="_blank"><i
+                    <a href="https://www.facebook.com/etecctoficial/" target="-blank"><i
                             class="fa-brands fa-facebook"></i></a>
-                    <a href="https://www.instagram.com/etecct_oficial/" target="_blank"><i
+                    <a href="https://www.instagram.com/etecct-oficial/" target="-blank"><i
                             class="fa-brands fa-instagram"></i></a>
-                    <a href="https://www.youtube.com/channel/UC7a68RRe2agVgXoWCn-E4-w" target="_blank"><i
+                    <a href="https://www.youtube.com/channel/UC7a68RRe2agVgXoWCn-E4-w" target="-blank"><i
                             class="fa-brands fa-youtube"></i></a>
                 </div>
             </div>
@@ -168,7 +165,7 @@
 
             <div class="container-cards">
                 <div class="card">
-                    <img src="./img/fernando_foto.jpg" alt="Fernando Ramirez - Front-end" class="img-member">
+                    <img src="./img/fernando-foto.jpg" alt="Fernando Ramirez - Front-end" class="img-member">
                     <h4>Desenvolvedor Front-end</h4>
                     <p>Fernando Ramirez Gutierrez</p>
                 </div>
@@ -197,7 +194,7 @@
         <p class="institution">ETEC CIDADE TIRADENTES - 2024 - SP</p>
     </main>
 
-    <script src="./js/interactions/navbar.js"></script>
+    <script src="./js/interactions/barra-lateral.js"></script>
     <script>
         // Função para rolar até o topo
         function scrollToTop() {

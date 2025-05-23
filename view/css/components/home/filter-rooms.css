@@ -1,6 +1,6 @@
 
 
-.filter-options {
+.opcoes-filtro {
     display: none; 
     flex-wrap: wrap;
     justify-content: center;
@@ -14,11 +14,11 @@
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
-.filter-options.show {
+.opcoes-filtro.show {
     display: flex;
 }
 
-.filter-options .room {
+.opcoes-filtro .room {
     background-image: linear-gradient(90deg, #537D5D, #73946B, #537D5D);
     position: relative;
     max-width: 220px;
@@ -34,73 +34,68 @@
     transition: border-color 0.1s, background-color 0.2s;
 }
 
-.filter-options .room img {
+.opcoes-filtro .room img {
     margin-right: 10px;
 }
 
-.filter-options .room h3 {
+.opcoes-filtro .room h3 {
     z-index: 2;
     color: white;
     transition: color 0.1s;
 }
 
-.filter-options .room.active {
+.opcoes-filtro .room.active {
     border-color: #D2D0A0;
 }
 
-.filter-options .room.active h3 {
+.opcoes-filtro .room.active h3 {
     color: #D2D0A0;
 }
 
-.filter-options .room:hover {
+.opcoes-filtro .room:hover {
     border-color: #CAE8BD;
     cursor: pointer;
 }
 
-.filter-options .room:hover h3 {
+.opcoes-filtro .room:hover h3 {
     color: #CAE8BD;
 }
 
 @media (max-width: 1300px) {
-    .filter-options .room {
+    .opcoes-filtro .room {
         min-width: 100px;
         font-size: 13px;
     }
 
-    .search-input {
-        width: 200px;
-    }
 }
 
 @media (max-width: 1000px) {
-    .filter-options {
+    .opcoes-filtro {
         overflow-x: auto;
         max-width: 100%;
         padding: 10px 0;
     }
 
-    .filter-options::-webkit-scrollbar {
+    .opcoes-filtro::-webkit-scrollbar {
         height: 8px;
     }
 
-    .filter-options::-webkit-scrollbar-track {
+    .opcoes-filtro::-webkit-scrollbar-track {
         background: #e0e0e0;
         border-radius: 10px;
     }
 
-    .filter-options::-webkit-scrollbar-thumb {
+    .opcoes-filtro::-webkit-scrollbar-thumb {
         background-color: #00cd18;
         border-radius: 10px;
         margin-top: 6px;
     }
 
-    .filter-options .room { /* Ajuste para o novo seletor */
+    .opcoes-filtro .room { /* Ajuste para o novo seletor */
         min-width: 140px;
         padding: 10px;
         font-size: 13px;
     }
 
-    .search-input {
-        width: 260px;
-    }
+
 }

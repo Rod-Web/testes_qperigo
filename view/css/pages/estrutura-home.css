@@ -1,0 +1,79 @@
+
+
+.container-cards-destaques {
+    padding-bottom: 48px;
+}
+
+.container-cards-destaques,
+.container-cards-gerais {
+    max-width: 1400px;
+    height: auto;
+    margin: 40px auto 0;
+}
+
+.titulo-destaque {
+    display: flex;
+    align-items: center;
+}
+
+.titulo-destaque,
+.titulo-gerais {
+    font-size: 25px;
+    margin-bottom: 20px;
+}
+
+.icons {
+    width: 40px;
+    cursor: pointer; 
+    margin-right: 10px;
+}
+
+#filtro-icon:hover {
+    width: 45px;
+    transition: 0.5s;
+}
+
+.container-cards-destaques .todos-cards-home,
+.container-cards-gerais .todos-cards-home {
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
+
+.container-cards-destaques .todos-cards-home {
+    gap: 40px;
+}
+
+.container-cards-gerais .numberpage {
+    width: 100%;
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    align-items: center;
+}
+
+.container-cards-gerais .numberpage .number {
+    font-size: 20px;
+    color: rgb(70, 70, 70);
+}
+
+.container-cards-gerais .numberpage #prev-page,
+.container-cards-gerais .numberpage #next-page {
+    color: gray;
+    padding: 5px 15px;
+}
+
+.container-cards-gerais .numberpage #prev-page:hover,
+.container-cards-gerais .numberpage #next-page:hover {
+    cursor: pointer;
+}
+
+@media (max-width: 600px) {
+
+    .container-cards-destaques .todos-cards-home {
+        justify-content: center;
+    }
+}

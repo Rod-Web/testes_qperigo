@@ -1,0 +1,31 @@
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Work+Sans:ital,wght@0,100..900;1,100..900&display=swap");
+@import url(https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css);
+
+body {
+  font-family: "Open Sans", sans-serif;
+  margin: 0;
+  padding: 0;
+  position: relative;
+  background-color: #B0DB9C;
+}
+
+main {
+  padding: 40px;
+  margin: 76px auto 0 auto;
+  max-width: 1500px;
+  min-height: 100vh;
+  background-color: #ECFAE5;
+  box-sizing: border-box;
+  box-shadow: 10px 10px 18px rgba(0, 0, 0, 0.13);
+  z-index: 1;
+}
+
+
+
+
+@media (max-width: 900px) {
+  main {
+    padding: 10px;
+  }
+
+}

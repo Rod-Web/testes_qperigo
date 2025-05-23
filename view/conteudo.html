@@ -5,8 +5,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Titulo da matéria</title>
-    <link rel="stylesheet" href="./css/assets/main.css">
     <link rel="stylesheet" href="./css/conteudo.css">
+    <link rel="stylesheet" href="/view/css/component/components/header.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css" />
 </head>
@@ -15,52 +15,43 @@
 
     <!--NAVBAR-->
     <header>
-        <div class="menu-icon" onclick="toggleSidebar()">
+
+        <div class="div-menu" onclick="toggleSidebar()">
             <i class="fa-solid fa-bars" style="color: #ffffff;"></i>
         </div>
-        <div class="navbar-content">
-            <a href="view//index.html"><img src="view/img/logo_q_perigo.png" alt=""></a>
-
-            <div class="functions">
-                <div class="search-container">
-                    <label for="search-input" class="search-icon">
-                        <i class="fa-solid fa-magnifying-glass" style="color: #00ab25;"></i>
-                    </label>
-                    <input type="text" class="search-input" id="search-input" placeholder="Encontre o que procura..."
-                        required />
-                </div>
-            </div>
+        
+        <div class="container-navbar">
+            <a href="/view/index.html">
+                <img 
+                    src="/view/img/conteudos/logo-q-perigo.png" 
+                    alt="Logo branca escrito Qperigo como representação da página"
+                >
+            </a>
         </div>
+            
+        <div class="container-busca">
+            <label for="busca-input" class="icone-busca">
+                <i class="fa-solid fa-magnifying-glass" style="color: #00ab25;"></i>
+            </label>
+            <input type="text" class="busca-input" id="busca-input" placeholder="Encontre o que procura..." required />
+        </div>
+            
     </header>
 
-    <aside class="sidebar" id="sidebar">
+    <aside class="barra-lateral" id="sidebar">
         <p class="close-btn" onclick="toggleSidebar()">×</p>
-        <a href="view/index.html">
-            <div class="logotipo"><img src="view/img/logo_q_perigo.png" alt=""></div>
+        <a href="/view/index.html">
+            <div class="logotipo"><img src="/view/img/conteudos/logo-q-perigo.png" alt=""></div>
         </a>
         <div class="sidebar-content">
-            <a href="view/index.html" class="sidebar-link active">
+            <a href="/view/index.html" class="sidebar-link active">
                 <i class="fa-solid fa-house" style="color: #ffffff;"></i>
                 <span>Home</span>
             </a>
 
-            <a href="view/desenvolvedores.html" class="sidebar-link">
+            <a href="/view/desenvolvedores.html" class="sidebar-link">
                 <i class="fa-solid fa-users" style="color: #ffffff;"></i>
                 <span>Sobre Nós</span>
-            </a>
-
-            <div class="conteudos">Acesse Também
-                <div class="triangulo"></div>
-            </div>
-
-            <a href="./dicas_web.html" class="sidebar-link">
-                <i class="fa-solid fa-lightbulb" style="color: #ffffff;"></i>
-                <span>Dicas da Web</span>
-            </a>
-         
-            <a href="./produtos_limpeza.html" class="sidebar-link">
-                <i class="fa-solid fa-soap" style="color: #ffffff;"></i>
-                <span>Produtos de Limpeza</span>
             </a>
         </div>
     </aside>
@@ -77,7 +68,7 @@
         </button>
 
         <div class="banner-post">
-            <img src="view/img/stem-cell research-amico.png" alt="Banner da matéria" class="banner-img">
+            <img src="/view/img/conteudos/stem-cell-research-amico.png" alt="Banner da matéria" class="banner-img">
         </div>
 
         <h2 class="titulo-principal skeleton">Título Principal</h2>
@@ -164,8 +155,8 @@
 
     <!-- Scripts -->
     <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
-    <script src="view/js/interactions/navbar.js"></script>
-    <script type="module" src="view/js/interactions/page_constructor.js"></script>
+    <script src="/view/js/interactions/barra-lateral.js"></script>
+    <script type="module" src="/view/js/interactions/page-constructor.js"></script>
     
     <script>
         document.addEventListener('DOMContentLoaded', function() {

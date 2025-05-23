@@ -1,0 +1,29 @@
+.container-banner {
+  position: relative;
+  max-width: 1400px;
+  background-color: rgb(0, 0, 0);
+  margin: auto;
+  border-radius: 10px;
+}
+  
+.container-banner .banner {
+  max-width: 1700px;
+  min-height: 550px;
+  display: flex;
+  align-items: center;
+  padding: 20px 9%;
+  position: relative;
+  overflow: hidden;
+  background-image: url(../../img/banners/Banners-para-site-Qperigo.jpg);
+  background-size: cover;
+  background-position: center center;
+  border-radius: 10px;
+  box-shadow: 10px 10px 18px rgba(0, 0, 0, 0.24);
+}
+  
+/* Estilos adicionais para dispositivos móveis */
+@media (max-width: 768px) {
+  .container-banner .banner {
+    padding: 20px;
+}
+}

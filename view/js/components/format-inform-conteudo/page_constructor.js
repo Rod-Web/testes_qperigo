@@ -1,5 +1,4 @@
-import increment_view from "./increment_view.js";
-import show_post from "./show_post.js";
+import show_post from "./show-post.js";
 
 const urlParams = new URLSearchParams(window.location.search);
 const id = urlParams.get('id');
@@ -31,8 +30,6 @@ if (!postagem) {
 // Chama show_post após os dados estarem carregados
 show_post(postagem);
 
-// Incrementa a visualização
-increment_view(id);
 
 // Remove o esqueleto de carregamento após a atualização do conteúdo
 document.querySelectorAll('.skeleton').forEach(el => el.classList.remove('active'));

@@ -1,0 +1,112 @@
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: linear-gradient(#537D5D, #73946B);
+    padding: 10px 100px;
+    position: fixed;
+    width: 100%;
+    z-index: 4;
+    top: 0;
+}
+
+.div-menu {
+    font-size: 30px;
+    cursor: pointer;
+}
+/* Efeito hover para o ícone de menu */
+.div-menu {
+    transition: transform 0.3s ease;
+}
+.div-menu:hover {
+    transform: scale(1.1);
+}
+
+.container-navbar {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 20px;
+}
+
+.container-navbar img {
+    height: 50px;
+}
+
+/* Efeito hover para a barra de pesquisa */
+.container-busca:hover .icone-busca {
+  transform: scale(1.1);
+}
+
+.icone-busca  {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: transform 0.3s;
+}
+
+.busca-input {
+    width: 300px;
+    height: 40px;
+    border-radius: 20px;
+    border: none;
+    outline: none;
+    padding-left: 40px;
+    transition: width 0.7s ease;
+    box-shadow: 2px 2px 5px #777;
+}
+
+.busca-input:hover,
+.busca-input:focus {
+  border-color: var(--primary-color);
+  box-shadow: 0 0 0 2px rgba(0, 138, 30, 0.2);
+}
+
+
+
+
+
+@media (max-width: 1300px) {
+    .busca-input {
+        width: 200px;
+    }
+}
+
+@media (max-width: 1000px) {
+    .busca-input {
+        width: 260px;
+    }
+}
+
+@media (max-width: 900px) {
+    header {
+        padding: 15px 10px;
+    }
+    
+    .container-navbar img {
+        height: 40px;
+    }
+}
+
+@media (max-width: 600px) {
+
+    .container-busca {
+        position: relative;
+        display: flex;
+        width: auto;
+    }
+
+}
+
+@media (max-width: 480px) {
+
+      .busca-input {
+    width: 160px;
+  }
+}

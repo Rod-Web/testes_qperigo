@@ -5,92 +5,131 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Home - Blog</title>
-    <link rel="stylesheet" href="/view/css/assets/main.css">
-    <link rel="stylesheet" href="/view/css/home.css">
-    <link rel="shortcut icon" href="img/conteudos/favicon.png" type="image/x-icon">
+
+    <link rel="stylesheet" href="./css/base/reset.css">
+    <link rel="stylesheet" href="./css/layout/header.css">
+    <link rel="stylesheet" href="./css/layout/main.css">
+    <!-- LINK RODAPE -->
+    <link rel="stylesheet" href="./css/pages/estrutura-home.css">
+
+    <link rel="stylesheet" href="./css/components/global/barra-lateral.css">
+    <link rel="stylesheet" href="./css/components/global/rolagem-topo.css">
+
+    <link rel="stylesheet" href="./css/components/home/banner.css">
+    <link rel="stylesheet" href="./css/components/home/filter-rooms.css">
+    <link rel="stylesheet" href="./css/components/home/card-column.css">
+    <link rel="stylesheet" href="./css/components/home/card-row.css">
+
+
+    <link rel="shortcut icon" href="./img/conteudos/favicon.png" type="image/x-icon">
 </head>
 
 <body>
+    
     <header>
-        <div class="menu-icon" onclick="toggleSidebar()">
+
+        <div class="div-menu">
             <i class="fa-solid fa-bars" style="color: #ffffff;"></i>
         </div>
-        <div class="navbar-content">
-            <a href="/view/index.html"><img src="/view/img/conteudos/logo_q_perigo.png" alt="Logo branca escrito Qperigo como representação da página"></a>
+
+        <div class="container-navbar">
+            <a href="#">
+                <img 
+                    src="./img/conteudos/logo_q_perigo.png" 
+                    alt="Logo branca escrito Qperigo como representação da página"
+                >
+            </a>
         </div>
 
-        <div class="search-container">
-            <label for="search-input" class="search-icon">
+        <div class="container-busca">
+            <label for="busca-input" class="icone-busca">
                 <i class="fa-solid fa-magnifying-glass" style="color: #537D5D;"></i>
             </label>
-            <input type="text" class="search-input" id="search-input" placeholder="Encontre o que procura..." required/>
+            <input type="text" class="busca-input" id="busca-input" placeholder="Encontre o que procura..." required/>
         </div>
+
     </header>
-    <aside class="sidebar" id="sidebar">
-        <p class="close-btn" onclick="toggleSidebar()">×</p>
-        <a href="/view/index.html">
-            <div class="logotipo"><img src="/view/img/conteudos/logo_q_perigo.png" alt="Logo branca escrito Qperigo como representação da página"></div>
+
+    <aside class="barra-lateral" id="barra-lateral">
+
+        <p class="fechar-botao">×</p>
+        <a href="#">
+
+            <div class="logotipo">
+                <img 
+                    src="./img/conteudos/logo_q_perigo.png" 
+                    alt="Logo branca escrito Qperigo como representação da página"
+                >
+            </div>
+
         </a>
-        <div class="sidebar-content">
-            <a href="/view/index.html" class="sidebar-link active">
+
+        <div class="container-barra-lateral">
+
+            <a href="#" class="link-da-barra-lateral active">
                 <i class="fa-solid fa-house" style="color: #ffffff;"></i>
                 <span>Home</span>
             </a>
 
-            <a href="/view/desenvolvedores.html" class="sidebar-link">
+            <a href="./desenvolvedores.html" class="link-da-barra-lateral">
                 <i class="fa-solid fa-users" style="color: #ffffff;"></i>
                 <span>Sobre Nós</span>
             </a>
 
-            <div class="conteudos">
-                Acesse Também
-            <div class="triangulo"></div>
-            </div>
+            <!--
+                <div class="conteudos">
+                    Acesse Também
+                <div class="triangulo"></div>
+                </div>
 
-            <a href="#" class="sidebar-link">
-                <i class="fa-solid fa-lightbulb" style="color: #ffffff;"></i>
-                <span>Dicas da Web</span>
-            </a>
+                <a href="#" class="sidebar-link">
+                    <i class="fa-solid fa-lightbulb" style="color: #ffffff;"></i>
+                    <span>Dicas da Web</span>
+                </a>
 
-            <a href="#" class="sidebar-link">
-                <i class="fa-solid fa-soap" style="color: #ffffff;"></i>
-                <span>Produtos de Limpeza</span>
-            </a>
+                <a href="#" class="sidebar-link">
+                    <i class="fa-solid fa-soap" style="color: #ffffff;"></i>
+                    <span>Produtos de Limpeza</span>
+                </a>
+            -->
+            
         </div>
+
     </aside>
-    <div class="overlay" id="overlay" onclick="toggleSidebar()"></div>
+
+    <div class="ocultar-fora" id="ocultar-fora"></div>
 
     <main>
-        <button class="back-to-top" onclick="scrollToTop()">
+
+        <button class="voltar-topo">
             <i class="fa-solid fa-arrow-up"></i>
         </button>
 
         <section class="container-banner">
-            <div class="banner">
-                <div class="content-banner">
-                </div>
-            </div>
+
+            <div class="banner"></div>
+
         </section>
 
-        <div class="latest-news-base">
-            <h2 class="title-latest-news">
-                
-                Produtos Químicos Domésticos
+        <div class="container-cards-destaques">
+            
+            <h2 class="titulo-destaque">        
+                Produtos Químicos Mais Comuns
             </h2>
             
-            <div class="cards-base-home cards-base-home-column"></div>
+            <div class="todos-cards-home cards-home-column"></div>
+        
         </div>
 
-        <br><br>
-
-        <div class="emphasis-base" id="emphasis-base">
-            <h2 class="title-emphasis">
+        <div class="container-cards-gerais" id="container-cards-gerais">
+            <h2 class="titulo-gerais">
                 <abbr title="Filtrar postagens">
-                    <img id="filtro-icon" class="icons" src="img/icons/filter.png" alt="Ícone de Filtro da cor verde">
+                    <img id="filtro-icon" class="icons" src="./img/icons/filter.png" alt="Ícone de Filtro da cor verde">
                 </abbr>
-                Produtos Mais Comuns
+                Produtos Quimicos Domésticos
             </h2>
-            <div id="filter-options" class="filter-options">
+
+            <div id="opcoes-filtro" class="opcoes-filtro">
                 
                 <button class="room" id="1">
                     <img src="img/icons/gas-stove.png"
@@ -121,39 +160,25 @@
                     <h3>Lavanderia</h3>
                 </button>
             </div>
-            <div class="cards-base-home cards-base-home-row"></div>
+
+            <div class="todos-cards-home cards-home-row"></div>
 
             <div class="numberpage">
                 <div id="prev-page">&#10094;</div>
                 <p class="number">1</p>
                 <div id="next-page">&#10095;</div>
             </div>
+
         </div>
 
         <hr style="max-width: 1400px; margin: 30px auto;">
+
     </main>
 
     <footer></footer>
 
-    <script src="/view/js/interactions/navbar.js"></script>
-    <script src="/view/js/homeScript.js" type="module"></script>
-    <script>
-        // Função para rolar até o topo
-        function scrollToTop() {
-            window.scrollTo({ top: 0, behavior: 'smooth' });
-        }
+    <script src="./js/homeScript.js" type="module"></script>
 
-        // Mostrar o botão ao rolar a página
-        window.addEventListener("scroll", function () {
-            const button = document.querySelector(".back-to-top");
-            if (window.scrollY > 300) {
-                button.classList.add("show");
-            } else {
-                button.classList.remove("show");
-            }
-        });
-
-    </script>
 </body>
 
 </html>

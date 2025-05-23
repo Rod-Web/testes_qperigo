@@ -1,0 +1,32 @@
+.voltar-topo {
+  position: fixed;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  bottom: 40px;
+  right: 40px;
+  height: 60px;
+  padding: 20px;
+  font-size: 19px;
+  border-radius: 50%;
+  color: #537D5D;
+  font-weight: bold;
+  background-color: #FAF6E9;
+  border: 3px solid #537D5D;
+  cursor: pointer;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  transition: background-color 0.3s, opacity 0.3s;
+  opacity: 0;
+  visibility: hidden;
+  z-index: 4;
+}
+
+.voltar-topo:hover {
+  background-color: #537D5D;
+  color: white;
+}
+
+.voltar-topo.aparecer {
+  opacity: 1;
+  visibility: visible;
+}

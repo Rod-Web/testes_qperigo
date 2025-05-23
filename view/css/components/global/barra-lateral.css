@@ -1,0 +1,124 @@
+.barra-lateral {
+  position: fixed;
+  top: 0;
+  left: -310px;
+  width: 310px;
+  height: 100%;
+  background-image: linear-gradient(90deg, #537D5D, #73946B, #537D5D);
+  transition: left 0.3s ease;
+  z-index: 1000;
+  padding-top: 60px;
+  overflow: auto;
+}
+
+.barra-lateral .logotipo {
+  height: 85px;
+  margin: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.barra-lateral .logotipo img {
+  width: 80%;
+}
+
+.fechar-botao {
+  position: absolute;
+  top: 10px;
+  right: 20px;
+  font-size: 36px;
+  color: white;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.container-barra-lateral {
+  margin-top: 40px;
+}
+
+
+.link-da-barra-lateral {
+  display: flex;
+  align-items: center;
+  padding: 15px 20px;
+  color: white;
+  text-decoration: none;
+  transition: background-color 0.3s, transform 0.3s;
+  border-radius: 25px 0 0 25px;
+  margin: 10px 0 10px 20px;
+}
+
+.link-da-barra-lateral:hover {
+  background-color: #73946B;
+  transform: translateX(10px);
+}
+
+.link-da-barra-lateral i {
+  width: 25px;
+  margin-right: 10px;
+  font-size: 18px;
+}
+
+.link-da-barra-lateral.active {
+  background-color: #73946B;
+  color: white;
+}
+
+.ocultar-fora {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  transition: opacity 0.3s ease;
+  opacity: 0;
+  z-index: 500;
+  pointer-events: none;
+}
+
+.show-barra-lateral {
+  left: 0;
+}
+
+
+
+
+.show-ocultar-fora {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+@media (max-width: 900px) {
+
+
+  .barra-lateral {
+    width: 280px;
+  }
+}
+
+
+/*
+.conteudos {
+  width: 100%;
+  background-color: #537D5D;
+  color: white;
+  padding: 13px;
+  margin-top: 30px;
+  position: relative;
+  margin-bottom: 20px;
+}
+
+.triangulo {
+  position: absolute;
+  width: 0;
+  height: 0;
+  border-left: 28px solid transparent;
+  border-right: 28px solid transparent;
+  border-top: 28px solid #537D5D;
+  top: 100%;
+  left: 70%;
+}
+
+*/
