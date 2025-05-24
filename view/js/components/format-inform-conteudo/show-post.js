@@ -1,0 +1,8 @@
+
+
+
+receberDados()
+
+function carregarDadosConteudo(postagem) {
+    
+}

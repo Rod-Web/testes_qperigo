@@ -99,8 +99,7 @@ header {
     .container-busca {
         position: relative;
         display: flex;
-        width: auto;
-    }
+        }
 
 }
 
@@ -110,3 +109,4 @@ header {
     width: 160px;
   }
 }
+

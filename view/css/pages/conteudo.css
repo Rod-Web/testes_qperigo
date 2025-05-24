@@ -30,16 +30,9 @@
   --transition-slow: 0.5s ease-in-out;
 }
 
-/* Reset e Estilos Base */
-body {
-  font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
-  line-height: 1.6;
-  color: var(--text-color);
-  background-color: var(--light-gray);
-}
 
 /* Banner Principal */
-.banner-post {
+.container-imagem-produto {
   max-width: min(1000px, 90vw);
   height: min(500px, 50vh);
   margin: 2rem auto;
@@ -50,7 +43,7 @@ body {
   isolation: isolate;
 }
 
-.banner-post::after {
+.container-imagem-produto::after {
   content: '';
   position: absolute;
   inset: 0;
@@ -58,159 +51,17 @@ body {
   z-index: 1;
 }
 
-.banner-img {
+.img-produto {
   width: 100%;
   height: 100%;
   object-fit: cover;
   transition: transform var(--transition-slow);
 }
 
-.banner-post:hover .banner-img {
+.container-imagem-produto:hover .img-produto {
   transform: scale(1.05);
 }
 
-/* Título Principal */
-.titulo-principal {
-  text-align: center;
-  font-size: clamp(1.75rem, 4vw, 2.5rem);
-  font-weight: 700;
-  color: var(--secondary-color);
-  margin: 2rem auto;
-  position: relative;
-  padding-bottom: 1rem;
-  line-height: 1.2;
-}
-
-.titulo-principal::after {
-  content: '';
-  position: absolute;
-  bottom: 0;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 100px;
-  height: 4px;
-  background: linear-gradient(to right, var(--primary-color), var(--primary-light));
-  border-radius: var(--radius-full);
-}
-
-/* Carrossel de Conteúdo */
-.content-carousel-container {
-  max-width: min(1400px, 95vw);
-  margin: 3rem auto;
-  padding: 0 1rem;
-  animation: fadeIn 0.5s ease-out forwards;
-}
-
-.swiper {
-  padding: 2rem 0 4rem;
-  overflow: visible;
-  width: 100%;
-}
-
-.swiper-wrapper {
-  align-items: stretch;
-  display: flex;
-}
-
-.swiper-slide {
-  width: calc(33.333% - 20px);
-  height: auto;
-  flex-shrink: 0;
-  opacity: 0.8;
-  transform: scale(0.95);
-  transition: all var(--transition-normal);
-  background-color: var(--white);
-  border-radius: var(--radius-lg);
-  box-shadow: var(--shadow-md);
-  padding: 1.5rem;
-  border: 1px solid var(--medium-gray);
-  display: flex;
-  flex-direction: column;
-  position: relative;
-  overflow: hidden;
-  margin: 0 10px;
-}
-
-/* Slide ativo (central) */
-.swiper-slide-active {
-  opacity: 1;
-  transform: scale(1);
-  z-index: 2;
-  border: 2px solid var(--primary-color);
-  box-shadow: var(--shadow-xl);
-}
-
-/* Texto com limite de altura */
-.texto {
-  margin: 0.5rem 0 1rem;
-  line-height: 1.6;
-  color: var(--text-light);
-  font-size: 0.95rem;
-  max-height: 120px;
-  overflow: hidden;
-  position: relative;
-  transition: max-height var(--transition-normal);
-}
-
-/* Gradiente de fade no texto cortado */
-.texto::after {
-  content: '';
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  height: 30px;
-  background: linear-gradient(to bottom, transparent, var(--white));
-  transition: opacity var(--transition-fast);
-}
-
-/* Texto expandido no slide ativo */
-.swiper-slide-active .texto {
-  max-height: none;
-}
-
-.swiper-slide-active .texto::after {
-  opacity: 0;
-}
-
-/* Garante que slides inativos mantenham texto cortado */
-.swiper-slide:not(.swiper-slide-active) .texto {
-  max-height: 120px !important;
-}
-
-.swiper-slide:not(.swiper-slide-active) .texto::after {
-  opacity: 1 !important;
-}
-
-/* Esconde botão no slide ativo */
-.swiper-slide-active .read-more {
-  display: none;
-}
-
-.read-more:hover {
-  background: var(--primary-light);
-  transform: translateY(-2px);
-}
-
-/* Navegação do Carrossel */
-.swiper-button-next,
-.swiper-button-prev {
-  color: var(--white);
-  background: var(--primary-color);
-  width: 3rem;
-  height: 3rem;
-  border-radius: var(--radius-full);
-  box-shadow: var(--shadow-lg);
-  transition: all var(--transition-fast);
-  opacity: 0.9;
-}
-
-.swiper-button-next:hover,
-.swiper-button-prev:hover {
-  background: var(--primary-light);
-  transform: scale(1.1);
-  opacity: 1;
-}
 
 .return-page {
   background-color: transparent;
@@ -250,12 +101,6 @@ body {
   transition: all var(--transition-fast);
 }
 
-/* Efeitos de Foco */
-:focus-visible {
-  outline: 2px solid var(--primary-light);
-  outline-offset: 2px;
-}
-
 /* Animações */
 @keyframes fadeIn {
   from { opacity: 0; transform: translateY(10px); }
@@ -270,47 +115,15 @@ body {
 
 /* Responsividade */
 @media screen and (max-width: 1024px) {
-  .banner-post {
+  .container-imagem-produto {
     height: min(400px, 60vh);
   }
   
-  .swiper-slide {
-    width: calc(50% - 15px);
-    padding: 1.5rem;
-  }
-  
-  .texto {
-    max-height: 100px;
-  }
-  
-  .swiper-slide:not(.swiper-slide-active) .texto {
-    max-height: 100px !important;
-  }
 }
 
 @media screen and (max-width: 768px) {
-  .content-carousel-container {
-    padding: 0 0.5rem;
-  }
-  
-  .swiper {
-    padding: 1rem 0 3rem;
-  }
-  
-  .swiper-slide {
-    width: 280px;
-    padding: 1.25rem;
-    opacity: 1;
-    transform: scale(1);
-  }
-  
-  .texto {
-    max-height: 80px;
-  }
-  
-  .swiper-slide:not(.swiper-slide-active) .texto {
-    max-height: 80px !important;
-  }
+
+
   
   .return-page {
     top: 5rem;
@@ -319,157 +132,11 @@ body {
 }
 
 @media screen and (max-width: 480px) {
-  .banner-post {
+  .container-imagem-produto {
     height: min(250px, 40vh);
     margin: 1rem auto;
   }
   
-  .titulo-principal {
-    margin: 1.5rem auto;
-  }
-  
-  .swiper-slide {
-    width: 260px;
-    padding: 1rem;
-  }
-  
-  .swiper-button-next,
-  .swiper-button-prev {
-    display: none;
-  }
-  
-  
-  .texto {
-    max-height: 60px;
-  }
-  
-  .swiper-slide:not(.swiper-slide-active) .texto {
-    max-height: 60px !important;
-  }
-}
-
-/* Acessibilidade */
-.sr-only {
-  position: absolute;
-  width: 1px;
-  height: 1px;
-  padding: 0;
-  margin: -1px;
-  overflow: hidden;
-  clip: rect(0, 0, 0, 0);
-  white-space: nowrap;
-  border-width: 0;
-}
-
-/* Fallback para JavaScript desabilitado */
-.no-js .swiper {
-  display: grid;
-  gap: 2rem;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-}
-
-.no-js .swiper-slide {
-  opacity: 1;
-  transform: scale(1);
-}
-
-/* Adicione estas regras para corrigir a exibição do conteúdo completo */
-
-/* Remove todos os limites quando o slide está ativo */
-.swiper-slide-active .texto {
-  max-height: none !important;
-  overflow: visible !important;
-}
-
-/* Remove completamente o gradiente de fade no slide ativo */
-.swiper-slide-active .texto::after {
-  display: none !important;
-}
-
-/* Garante que o container do slide ativo mostre todo o conteúdo */
-.swiper-slide-active .slide-content {
-  overflow: visible;
-}
-
-/* Ajuste específico para o texto expandido */
-.texto.expanded {
-  max-height: none !important;
-  overflow: visible !important;
-}
-
-.texto.expanded::after {
-  display: none !important;
-}
-
-/* Ajustes para o hover - se ainda quiser manter essa funcionalidade */
-.swiper-slide:hover .texto {
-  max-height: none;
-  overflow: visible;
-}
-
-.swiper-slide:hover .texto::after {
-  display: none;
-}
-
-/* Garante que o botão "Leia mais" some quando o texto está expandido */
-.swiper-slide-active .read-more,
-.swiper-slide:hover .read-more,
-.texto.expanded + .read-more {
-  display: none !important;
-}
-
-/* Adicione estas regras para melhorar os efeitos hover */
-
-/* Efeito hover para os slides do carrossel */
-.swiper-slide {
-  transition: all var(--transition-normal), transform 0.4s cubic-bezier(0.18, 0.89, 0.32, 1.28);
-}
-
-.swiper-slide:hover {
-  transform: translateY(-8px) scale(1.02);
-  box-shadow: 0 12px 20px -5px rgba(0, 0, 0, 0.15);
-  border-color: var(--primary-light);
-}
-
-/* Efeito hover refinado para o botão "Leia mais" */
-.read-more {
-  position: relative;
-  overflow: hidden;
-  z-index: 1;
-  transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
-}
-
-.read-more::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: -100%;
-  width: 100%;
-  height: 100%;
-  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
-  transition: all 0.6s ease;
-  z-index: -1;
-}
-
-.read-more:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 7px 14px rgba(0, 200, 53, 0.25);
-}
-
-.read-more:hover::before {
-  left: 100%;
-}
-
-/* Efeito hover para os botões de navegação do carrossel */
-.swiper-button-next,
-.swiper-button-prev {
-  transition: all 0.3s, transform 0.2s cubic-bezier(0.18, 0.89, 0.32, 1.28);
-}
-
-.swiper-button-next:hover,
-.swiper-button-prev:hover {
-  transform: scale(1.15);
-  box-shadow: 0 8px 15px rgba(0, 138, 30, 0.3);
 }
 
 /* Efeito hover para o botão de retornar à página */
@@ -497,7 +164,7 @@ body {
 }
 
 /* Efeito hover para o banner */
-.banner-post:hover::after {
+.container-imagem-produto:hover::after {
   background: linear-gradient(to bottom, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.4));
 }
 

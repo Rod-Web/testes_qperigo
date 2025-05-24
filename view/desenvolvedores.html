@@ -5,8 +5,15 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Desenvolvedores</title>
-    <link rel="stylesheet" href="/view/css/component/components/header.css">
-    <link rel="stylesheet" href="./css/desenvolvedores.css">
+
+    <link rel="stylesheet" href="./css/base/reset.css">
+    <link rel="stylesheet" href="./css/layout/header.css">
+    <link rel="stylesheet" href="./css/layout/main.css">
+    <!-- RODAPE -->
+    <link rel="stylesheet" href="./css/components/conteudo/carrossel.css">
+    <link rel="stylesheet" href="./css/components/global/barra-lateral.css">
+    <link rel="stylesheet" href="./css/components/global/rolagem-topo.css">
+    <link rel="stylesheet" href="./css/pages/desenvolvedores.css">
 
 </head>
 
@@ -14,14 +21,14 @@
     <!--NAVBAR-->
     <header>
 
-        <div class="div-menu" onclick="toggleSidebar()">
+        <div class="div-menu">
             <i class="fa-solid fa-bars" style="color: #ffffff;"></i>
         </div>
 
         <div class="container-navbar">
-            <a href="/view/index.html">
+            <a href="./index.html">
                 <img 
-                    src="/view/img/conteudos/logo-q-perigo.png" 
+                    src="./img/conteudos/logo_q_perigo.png" 
                     alt="Logo branca escrito Qperigo como representação da página"
                 >
             </a>
@@ -35,59 +42,62 @@
         </div>
 
     </header>
-    
-    <aside class="sidebar" id="sidebar">
-        <p class="close-btn" onclick="toggleSidebar()">×</p>
+
+    <aside class="barra-lateral" id="barra-lateral">
+
+        <p class="fechar-botao">×</p>
         <a href="./index.html">
-            <div class="logotipo"><img src="./img/logo-q-perigo.png" alt=""></div>
+
+            <div class="logotipo">
+                <img 
+                    src="./img/conteudos/logo_q_perigo.png" 
+                    alt="Logo branca escrito Qperigo como representação da página"
+                >
+            </div>
+
         </a>
-        <div class="sidebar-content">
-            <a href="./index.html" class="sidebar-link active">
+
+        <div class="container-barra-lateral">
+
+            <a href="./index.html" class="link-da-barra-lateral">
                 <i class="fa-solid fa-house" style="color: #ffffff;"></i>
                 <span>Home</span>
             </a>
 
-            <a href="./desenvolvedores.html" class="sidebar-link">
+            <a href="#" class="link-da-barra-lateral active">
                 <i class="fa-solid fa-users" style="color: #ffffff;"></i>
                 <span>Sobre Nós</span>
             </a>
-            <!--
-            <a href="#" class="sidebar-link">
-                <i class="fa-solid fa-gamepad" style="color: #ffffff;"></i>
-                <span>Jogo: Clean House</span>
-            </a>
-            <a href="./contribuidor.html" class="sidebar-link">
-                <i class="fa-solid fa-handshake-angle" style="color: #ffffff;"></i>
-                <span>Contribua</span>
-            </a>
-            -->
 
-            <div class="conteudos">Acesse Também
+            <!--
+                <div class="conteudos">
+                    Acesse Também
                 <div class="triangulo"></div>
-            </div>
+                </div>
 
-            <a href="./dicas-web.html" class="sidebar-link">
-                <i class="fa-solid fa-lightbulb" style="color: #ffffff;"></i>
-                <span>Dicas da Web</span>
-            </a>
-            <!--
-            <a href="./desvendando-mitos.html" class="sidebar-link">
-                <i class="fa-solid fa-magnifying-glass-plus" style="color: #ffffff;"></i>
-                <span>Desvendando Mitos</span>
-            </a>
+                <a href="#" class="sidebar-link">
+                    <i class="fa-solid fa-lightbulb" style="color: #ffffff;"></i>
+                    <span>Dicas da Web</span>
+                </a>
+
+                <a href="#" class="sidebar-link">
+                    <i class="fa-solid fa-soap" style="color: #ffffff;"></i>
+                    <span>Produtos de Limpeza</span>
+                </a>
             -->
-            <a href="./produtos-limpeza.html" class="sidebar-link">
-                <i class="fa-solid fa-soap" style="color: #ffffff;"></i>
-                <span>Produtos de Limpeza</span>
-            </a>
+            
         </div>
+
     </aside>
-    <div class="overlay" id="overlay" onclick="toggleSidebar()"></div>
+
+    <div class="ocultar-fora" id="ocultar-fora"></div>
 
     <main>
-        <button class="back-to-top" onclick="scrollToTop()">
+
+        <button class="voltar-topo">
             <i class="fa-solid fa-arrow-up"></i>
         </button>
+
         <div class="container-about-us">
             <div class="about-img">
                 <img src="https://www.quimica.com.br/wp-content/uploads/2022/03/pesquisa-quimica.jpg" alt="">
@@ -165,7 +175,7 @@
 
             <div class="container-cards">
                 <div class="card">
-                    <img src="./img/fernando-foto.jpg" alt="Fernando Ramirez - Front-end" class="img-member">
+                    <img src="./img/team/fernando_foto.jpg" alt="Fernando Ramirez - Front-end" class="img-member">
                     <h4>Desenvolvedor Front-end</h4>
                     <p>Fernando Ramirez Gutierrez</p>
                 </div>
@@ -194,25 +204,7 @@
         <p class="institution">ETEC CIDADE TIRADENTES - 2024 - SP</p>
     </main>
 
-    <script src="./js/interactions/barra-lateral.js"></script>
-    <script>
-        // Função para rolar até o topo
-        function scrollToTop() {
-            window.scrollTo({ top: 0, behavior: 'smooth' });
-        }
-
-        // Mostrar o botão ao rolar a página
-        window.addEventListener("scroll", function () {
-            const button = document.querySelector(".back-to-top");
-            if (window.scrollY > 300) {
-                button.classList.add("show");
-            } else {
-                button.classList.remove("show");
-            }
-        });
-
-    </script>
-
+    <script src="./js/pages/devs.js" type="module"></script>
 </body>
 
 </html>

@@ -1,0 +1,162 @@
+.aa {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    position: relative;
+}
+
+.carousel-container {
+    position: relative;
+}
+
+.carousel {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: clamp(80px, 15vw, 150px);
+    transition: transform 0.5s ease;
+}
+
+.card {
+    background-color: #144d31;
+    border-radius: clamp(25px, 4vw, 40px);
+    padding: clamp(20px, 4vw, 30px);
+    width: clamp(220px, 30vw, 350px);
+    height: clamp(380px, 50vh, 420px);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    box-shadow: 0 8px 30px rgba(0,0,0,0.5);
+    text-align: left;
+    transition: all 0.5s ease;
+    opacity: 0;
+    transform: scale(0.7);
+    position: absolute;
+        transition: transform 0.5s ease, max-height 0.3s ease;
+}
+.card.expanded .content {
+    overflow-y: auto;
+    display: block;
+    max-height: 80%;
+    margin: 15px 0;
+    text-align: justify;
+    padding: 10px;
+    transition: max-height 0.5s ease-in-out;
+}
+.card h2 {
+    font-size: clamp(20px, 2.5vw, 24px);
+    color: #00ff99;
+    margin: 0;
+    flex-shrink: 0;
+}
+
+.content {
+    color: #ccc;
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-line-clamp: 5;
+    -webkit-box-orient: vertical;
+    line-height: 1.6;
+    height: auto;
+    transition: max-height 0.3s ease;
+}
+
+.card.expanded .content {
+    overflow-y: auto;
+    -webkit-line-clamp: unset;
+    display: block;
+    max-height: 80%;
+    margin: 15px 0;
+    text-align: justify;
+    padding: 10px;
+}
+
+.content::-webkit-scrollbar {
+    width: 8px;
+}
+
+.content::-webkit-scrollbar-track {
+    background: #1b5e3b;
+    border-radius: 10px;
+}
+
+.content::-webkit-scrollbar-thumb {
+    background-color: #00ff99;
+    border-radius: 10px;
+}
+
+.card .toggle {
+    display: none;
+    background-color: #00ff99;
+    color: black;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 20px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.card .toggle:hover {
+    background-color: #00cc77;
+}
+
+/* Estados */
+.card.center {
+    transform: scale(1.2);
+    opacity: 1;
+    background-color: #1b5e3b;
+    z-index: 3;
+}
+
+.card.left {
+    transform: translateX(-30vw) scale(0.9);
+    opacity: 1;
+    z-index: 2;
+}
+
+.card.right {
+    transform: translateX(30vw) scale(0.9);
+    opacity: 1;
+    z-index: 2;
+}
+
+.card.center .toggle {
+    display: inline-block;
+}
+
+.nav-button {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(0,0,0,0.5);
+    border: none;
+    color: white;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    cursor: pointer;
+    font-size: 24px;
+    z-index: 10;
+}
+
+.nav-button:hover {
+    background-color: rgba(0,0,0,0.8);
+}
+
+.prev {
+    left: 10vh;
+
+}
+
+.next {
+    right: 10vh;
+
+}
+
+@media (max-width: 768px) {
+    .card.left,
+    .card.right {
+        display: none;
+    }
+}
