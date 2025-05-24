@@ -1,157 +1,17 @@
+// Importações de interações globais
 import { btnEsperto } from "./interactions/global/rolagem-topo.js";
 import { abrirBarraLateral } from "./interactions/global/barra_lateral.js";
 
-import { cardColumn } from "./components/format-cards-home/cardColumn.js";
-import { cardRow } from "./components/format-cards-home/cardRow.js";
+// Importações principais
+import { carregarDados } from "./functions/home/api.js";
+import { configuracaoFiltro } from "./functions/home/filtro.js";
+import { atualizarPagina } from "./functions/home/render.js";
 
-const url = "https://backqperigo-production.up.railway.app/postagens";
-let postagens = [];
-let postagensFiltradas = [];
-let valorFiltro = [];
-
-document.addEventListener("DOMContentLoaded", async ()=> {
+// Central de Controle
+document.addEventListener("DOMContentLoaded", async () => {
     await carregarDados();
-    configuracaoFiltro();
+    configuracaoFiltro(atualizarPagina);
     atualizarPagina();
-    renderizarSecaoDestaque();
     btnEsperto();
     abrirBarraLateral();
-
-
 });
-
-async function carregarDados() {
-    const locaData = localStorage.getItem("postagens");
-    if (locaData) {
-        postagens = JSON.parse(locaData);
-        console.log("Dados carregados do localStorage.");
-    } else {
-        try {
-            const response = await fetch(url);
-            if(!response.ok) throw new Error(`Erro na API: ${response.status}`);
-            const data = await response.json();
-            postagens = await data.map((postagem) => ({
-                id_postagem: postagem.id_postagem,
-                nome_produto: postagem.nome_produto,
-                composicao: postagem.composicao,
-                manipulacao: postagem.manipulacao,
-                combinacoes_perigosas: postagem.combinacoes_perigosas,
-                introducao: postagem.introducao,
-                data_publicacao: postagem.data_publicacao || new Date().toISOString().split("T")[0],
-                id_categoria: postagem.id_categoria,
-                id_comodo: postagem.id_comodo,
-                banner: postagem.banner,
-                acessos: postagem.acessos,
-                armazenamento: postagem.armazenamento,
-            }));
-            localStorage.setItem("postagens", JSON.stringify(postagens));
-        } catch (error) {
-            console.error("Erro ao carregar dados:", error);
-            alert("Erro ao carregar dados da API.");
-        };
-    };
-};
-
-function configuracaoFiltro() {
-    const botoes = document.querySelectorAll(".room");
-    botoes.forEach((btn) => {
-    btn.addEventListener("click", () => {
-      const botaoId = parseInt(btn.id);
-      const botaoAtiv = btn.classList.contains("active");
-
-      botoes.forEach((b) => b.classList.remove("active"));
-      valorFiltro = [];
-
-      if (!botaoAtiv) {
-        btn.classList.add("active");
-        valorFiltro.push(botaoId);
-      }
-
-      atualizarPagina();
-    })});
-};
-
-function aplicarFiltro() {
-    if (valorFiltro.length === 0) {
-        postagensFiltradas = [...postagens];
-    } else {
-        postagensFiltradas = postagens.filter((item) => valorFiltro.includes(item.id_comodo));
-    }
-}
-
-function atualizarPagina() {
-    aplicarFiltro();
-    renderizarSecaoDestaque();
-    configurarToggleFiltro();
-
-}
-
-//====== Visibilidade do filtro =======
-function configurarToggleFiltro() {
-    const filtroIcon = document.getElementById("filtro-icon")
-    const filterOptionsDiv = document.getElementById("opcoes-filtro")
-
-    filtroIcon.addEventListener("click", function mostrarToggle(){
-        filterOptionsDiv.classList.toggle("show")
-    })
-}
-
-// ======= Renderiza Notícias em Destaque (Row com Paginação) =======
-function renderizarSecaoDestaque() {
-  const container = document.querySelector(".cards-home-row");
-  const prevBtn = document.getElementById("prev-page");
-  const nextBtn = document.getElementById("next-page");
-  const pageNumber = document.querySelector(".number");
-
-  container.innerHTML = "";
-
-  const destaque = [...postagensFiltradas]
-    .sort((a, b) => b.acessos - a.acessos)
-    .slice(0, 18);
-
-  const itemsPerPage = 6;
-  let currentIndex = 0;
-  const totalPages = Math.ceil(destaque.length / itemsPerPage);
-
-  function renderPagina() {
-    container.innerHTML = "";
-
-    const pagina = destaque.slice(currentIndex, currentIndex + itemsPerPage);
-    if (pagina.length === 0) {
-      container.innerHTML = "<p>Nenhuma postagem encontrada.</p>";
-    } else {
-      pagina.forEach((item) => {
-        const card = criarCardComListener(cardRow(item), item.id_postagem);
-        container.appendChild(card);
-      });
-    }
-
-    pageNumber.textContent = Math.ceil(currentIndex / itemsPerPage) + 1;
-    prevBtn.style.color = currentIndex > 0 ? "black" : "white";
-    nextBtn.style.color = currentIndex + itemsPerPage < destaque.length ? "black" : "white";
-  }
-
-  prevBtn.onclick = () => {
-    if (currentIndex > 0) {
-      currentIndex -= itemsPerPage;
-      renderPagina();
-    }
-  };
-
-  nextBtn.onclick = () => {
-    if (currentIndex + itemsPerPage < destaque.length) {
-      currentIndex += itemsPerPage;
-      renderPagina();
-    }
-  };
-
-  renderPagina();
-}
-
-// ======= Função Helper: Card com Listener de Clique =======
-function criarCardComListener(card, id) {
-  card.addEventListener("click", () => {
-    window.location.href = `/view/conteudo.html?id=${id}`;
-  });
-  return card;
-}
